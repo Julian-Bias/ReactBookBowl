@@ -327,3 +327,76 @@ button:hover {
   font-weight: bold;
   margin-top: 1rem;
 }
+
+/* Light Mode Styles */
+body, .navigation, .account-container, .register-container {
+    background-color: #ffffff;
+    color: #333333;
+  }
+  
+  .nav-link {
+    color: #333333; /* Darker color for light mode */
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .logout-button {
+    color: #cc0000;
+  }
+  
+  /* Dark Mode Styles */
+  body.dark-mode, .dark-mode .navigation, .dark-mode .account-container, .dark-mode .register-container {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }
+  
+  .dark-mode .nav-link {
+    color: #ffffff; /* Light color for dark mode */
+  }
+  
+  .dark-mode .logout-button {
+    color: #ff5555; /* A contrasting color for the logout button */
+  }
+
+  .dark-mode .nav-link:hover {
+    color: #ffcc00; /* Optional: add a hover effect in dark mode */
+  }
+  
+  .dark-mode .logout-button:hover {
+    color: #ff7777;
+  }
+
+  /* Tablet (768px and below) */
+@media (max-width: 768px) {
+    .navigation {
+      flex-direction: row; /* Stack navigation links horizontally */
+      justify-content: space-around;
+      padding: 0.5rem 1rem;
+    }
+  
+    .nav-link {
+      font-size: 0.9rem;
+      margin: 0 10px;
+    }
+  
+    .logout-button {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Mobile (480px and below) */
+  @media (max-width: 480px) {
+    .navigation {
+      flex-direction: column; /* Stack navigation links vertically */
+      padding: 0.5rem;
+    }
+  
+    .nav-link {
+      font-size: 0.8rem;
+      margin: 10px 0; /* Add spacing between vertically stacked links */
+    }
+  
+    .logout-button {
+      font-size: 0.8rem;
+    }
+  }
