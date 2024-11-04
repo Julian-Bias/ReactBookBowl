@@ -30,7 +30,6 @@ const Account = () => {
         });
 
         const result = await response.json();
-        console.log("Account data fetched:", result);
         if (response.ok) {
           setUserData(result);
           setCheckedOutBooks(result.books || []);
