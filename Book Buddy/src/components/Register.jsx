@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Styles.css"
 
+const API_URL = "https://fsa-book-buddy-b6e748d1380d.herokuapp.com/api";
+
 const Register = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
@@ -25,7 +27,7 @@ const Register = () => {
       setMessage(null);
   
       try {
-        const response = await fetch(`${API_url}/users/register`, {
+        const response = await fetch(`${API_URL}/users/register`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",

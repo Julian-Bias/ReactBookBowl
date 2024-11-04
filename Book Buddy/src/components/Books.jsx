@@ -1,4 +1,3 @@
-/* TODO - add your code to create a functional React component that displays all of the available books in the library's catalog. Fetch the book data from the provided API. Users should be able to click on an individual book to navigate to the SingleBook component and view its details. */
 import React, { useEffect, useState } from "react";
 import { fetchAllBooks } from "../API";
 import { useNavigate } from "react-router-dom";
@@ -13,9 +12,9 @@ const Books = () => {
   const getBooks = async () => {
     const APIResponse = await fetchAllBooks();
     if (APIResponse.success) {
-      setBooks(APIResponse.data.books);
+      setBooks(APIResponse.data.books); // Adjust if the data structure is different
     } else {
-      setError(APIResponse.error.message);
+      setError(APIResponse.error || "Failed to fetch books.");
     }
   };
 
@@ -24,7 +23,7 @@ const Books = () => {
   }, []);
 
   const booksToDisplay = searchParams
-    ? books.filter((books) => books.name.toLowerCase().includes(searchParams))
+    ? books.filter((book) => book.title.toLowerCase().includes(searchParams)) // Ensure this matches your API response structure
     : books;
 
   const handleBookClick = (bookId) => {
@@ -46,14 +45,18 @@ const Books = () => {
 
       {error && <div className="error-message">Error: {error}</div>}
       <div>
-        {booksToDisplay.map((book) => (
-          <div key={book.id} className="book-card">
-            <h3>{book.name}</h3>
-            <button onClick={() => handleBookClick(book.id)}>
-              See Details
-            </button>
-          </div>
-        ))}
+        {booksToDisplay.length > 0 ? (
+          booksToDisplay.map((book) => (
+            <div key={book.id} className="book-card">
+              <h3>{book.title}</h3>
+              <button onClick={() => handleBookClick(book.id)}>
+                See Details
+              </button>
+            </div>
+          ))
+        ) : (
+          <p>No books available.</p>
+        )}
       </div>
     </>
   );
