@@ -89,6 +89,7 @@ const Account = () => {
   }
 
   return (
+    <>
     <div className="account-container">
       <h2>Account Details</h2>
       <div className="account-details">
@@ -107,6 +108,11 @@ const Account = () => {
             {checkedOutBooks.map((book) => (
               <li key={book.id}>
                 {book.title} by {book.author}
+                <img 
+                  src={book.coverimage} 
+                  alt={`Cover of ${book.title}`} 
+                  style={{ width: "100px", height: "auto", margin: "10px 0" }}
+                />
                 <button onClick={() => returnBook(book.id)}>Return Book</button>
               </li>
             ))}
@@ -116,6 +122,7 @@ const Account = () => {
         )}
       </div>
     </div>
+    </>
   );
 };
 

@@ -150,26 +150,28 @@
   background-color: #0056b3;
 }
 
+.login-required {
+  color: red;
+}
+
 /* Account page */
 .account-container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.account-container h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   text-align: center;
-  color: #333;
+  margin-top: 20px;
 }
 
-.account-details p,
-.account-details h3 {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 10px;
+.account-details {
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .account-details ul {
@@ -178,16 +180,30 @@
 }
 
 .account-details li {
-  background-color: #e9e9e9;
-  padding: 8px;
-  margin: 5px 0;
-  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.error-message {
-  color: #d9534f;
-  font-size: 1rem;
-  text-align: center;
+.account-details img {
+  max-width: 100px;
+  height: auto;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
 }
 
 /* Navigation bar */
@@ -224,4 +240,90 @@
 
 .logout-button:hover {
   background-color: #555;
+}
+
+/* Center the form on the page */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+}
+
+/* Form styling */
+.register-form {
+  width: 100%;
+  max-width: 400px;
+  padding: 2rem;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Form heading */
+.register-form h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+/* Label styling */
+.register-form label {
+  display: block;
+  text-align: left;
+  font-size: 1rem;
+  color: #555;
+  margin: 0.5rem 0 0.2rem;
+}
+
+/* Input fields */
+.register-form input[type="text"],
+.register-form input[type="email"],
+.register-form input[type="password"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+.register-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Button styling */
+.register-form button {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-form button:hover {
+  background-color: #0056b3;
+}
+
+/* Error and success messages */
+.error-message {
+  color: #d9534f;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+.success-message {
+  color: #5cb85c;
+  font-weight: bold;
+  margin-top: 1rem;
 }
