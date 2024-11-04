@@ -1,0 +1,12 @@
+/* books page */
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.book {
+  border: 1px solid #ddd;
+  padding: 16px;
+  border-radius: 4px;
+}
