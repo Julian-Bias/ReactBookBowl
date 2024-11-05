@@ -12,7 +12,7 @@ const Books = () => {
   const getBooks = async () => {
     const APIResponse = await fetchAllBooks();
     if (APIResponse.success) {
-      setBooks(APIResponse.data.books); // Adjust if the data structure is different
+      setBooks(APIResponse.data.books); 
     } else {
       setError(APIResponse.error || "Failed to fetch books.");
     }
@@ -23,7 +23,7 @@ const Books = () => {
   }, []);
 
   const booksToDisplay = searchParams
-    ? books.filter((book) => book.title.toLowerCase().includes(searchParams)) // Ensure this matches your API response structure
+    ? books.filter((book) => book.title.toLowerCase().includes(searchParams))
     : books;
 
   const handleBookClick = (bookId) => {

@@ -53,7 +53,9 @@ const SingleBook = () => {
 
       if (!updateResponse.ok) {
         const updateResult = await updateResponse.json();
-        throw new Error(updateResult.message || "Failed to update book status.");
+        throw new Error(
+          updateResult.message || "Failed to update book status."
+        );
       }
 
       // Notify the user
@@ -71,13 +73,10 @@ const SingleBook = () => {
 
       const accountResult = await accountResponse.json();
       if (accountResponse.ok) {
-        // Assuming the user's checked out books are part of the returned user data
-        // You would need to make sure that the `userData` in Account has a checked out books array
-        // Here you can dispatch an event or use context/state management to update the account state
+        //
       } else {
         console.error("Failed to fetch updated user data.");
       }
-
     } catch (error) {
       console.error("Checkout error:", error);
       setCheckoutMessage(error.message);
